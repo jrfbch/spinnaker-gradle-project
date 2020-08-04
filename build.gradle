@@ -5,7 +5,22 @@ plugins {
 
 subprojects {
   repositories {
-    gradlePluginPortal()
+    maven {
+      url = "https://maven.aliyun.com/repository/gradle-plugin"
+      mavenContent { releasesOnly() }
+    }
+    maven {
+        url = "https://maven.aliyun.com/repository/public"
+        mavenContent { releasesOnly() }
+    }
+    maven {
+        url = "https://pixel.sankuai.com/repository/group-releases"
+        mavenContent { releasesOnly() }
+    }
+    maven {
+        url = "https://pixel.sankuai.com/repository/group-snapshots"
+        mavenContent { snapshotsOnly() }
+    }
   }
 
   apply plugin: 'com.diffplug.spotless'
